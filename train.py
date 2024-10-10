@@ -48,7 +48,7 @@ def bce_loss(pred, mask):
 
 def train(Dataset, Network):
     ## dataset
-    cfg    = Dataset.Config(datapath='./data/train', savepath='./exp/run411', mode='train', batch=18    , lr=0.00003, momen=0.9, decay=5e-4, epoch=180)  #lr=0.00005 epoch=180 batch=18
+    cfg    = Dataset.Config(datapath='./data/train', savepath='./exp/', mode='train', batch=18    , lr=0.00003, momen=0.9, decay=5e-4, epoch=180)  #lr=0.00005 epoch=180 batch=18
     data   = Dataset.Data(cfg)
     loader = DataLoader(data, collate_fn=data.collate, batch_size=cfg.batch, shuffle=True, num_workers=8,drop_last=False,pin_memory=True)
     if not os.path.exists(cfg.savepath):
