@@ -22,7 +22,7 @@ import time
 class Test(object):
     def __init__(self, Dataset, Network, path):
         ## dataset
-        self.cfg    = Dataset.Config(datapath=path, snapshot='./out/new2', mode='test')
+        self.cfg    = Dataset.Config(datapath=path, snapshot='./out/swin', mode='test')
         self.data   = Dataset.Data(self.cfg)
         self.loader = DataLoader(self.data, batch_size=1, shuffle=False, num_workers=8)
         ## network
